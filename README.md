@@ -18,12 +18,18 @@ SigmaM2M, a oneM2M platform; it has no dependency on it.
 
 | Package | What it does |
 |---|---|
-| `sim` | `New(outstation, master)`, then `Start` on TCP, UDP (`Network`, `ReplyPort`) or TLS (`TLS`, an `iotsec.TLSServer`): static points (`Set`, `Get`), buffered events (`AddEvent`), unsolicited responses, IIN bits (`SetNeedTime`, `SetRestart`, `SetOverflow`, `SetStuckIIN`), time synchronisation (`Clock`), controls (`Controls`, `SetControlStatus`), faults (`SetIgnore`, `SetDelay`, `Stop` and `Start`); Secure Authentication v5 (`EnableAuth`, aggressive mode, update key change with an authority, `TamperReplies`); file transfer (`PutFile`, `File`); what the master sent (`Requests`, `LinkFunctions`, `AuthStats`) |
+| `sim` | `New(outstation, master)`, then `Start` on TCP, UDP (`Network`, `ReplyPort`) or TLS (`TLS`, an `iotsec.TLSServer`): static points (`Set`, `Get`), buffered events (`AddEvent`), unsolicited responses, IIN bits (`SetNeedTime`, `SetRestart`, `SetOverflow`, `SetStuckIIN`), time synchronisation (`Clock`), controls (`Controls`, `SetControlStatus`), faults (`SetIgnore`, `SetDelay`, `Stop` and `Start`); Secure Authentication v5 (`EnableAuth`, aggressive mode, update key change with an authority, `TamperReplies`); file transfer (`PutFile`, `File`); its device profile document in XML (`Profile`, written with dnp3's `profile` package); what the master sent (`Requests`, `LinkFunctions`, `AuthStats`) |
 | `sim` presets | `StartCP1243` and `StartCP1542`: the dnp3 outstation limited to the declared capabilities of the Siemens CP 1243-1 (document version 1.1) and CP 1542SP-1 IRC (document version 2.2) device profiles: objects, qualifiers, function codes, broadcast, Secure Authentication and the TLS suites they declare; `CP1243Declared`, `CP1542Declared` |
 | `cmd/dnp3sim` | Serves the simulator with a small demo database, or a preset |
 
-Not simulated: serial lines, device profile XML, a real device's timing
-and firmware quirks beyond those the presets name.
+Not simulated: serial lines, a real device's timing and firmware quirks
+beyond those the presets name. Every role the simulator plays is also in
+the dnp3 library (outstation with `PointDB`, Secure Authentication with
+update key changes, file transfer, the presets' device profiles through
+`OutstationConfig.Filter`); the simulator is a separate outstation built
+for fault injection, and a gateway, the update key authority and device
+profile documents live in the library (`gateway`, `authority`,
+`profile`).
 
 ## Install
 

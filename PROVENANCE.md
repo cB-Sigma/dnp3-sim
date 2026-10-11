@@ -10,7 +10,8 @@ test it without devices; the presets were added on 2026-10-06 from two
 vendor device profiles supplied by the user. The simulator, its command
 and the tests that drive it moved out of the dnp3 module into this one on
 2026-10-11 (with `git mv`), so the library does not depend on its
-simulator.
+simulator. For v0.3.0 (2026-10-12) `Sim.Profile` was added on top of the
+library's new `profile` package.
 
 ## Sources
 
