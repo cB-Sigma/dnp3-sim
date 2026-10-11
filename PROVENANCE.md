@@ -45,6 +45,6 @@ cite its numbers. In our words:
 | Test | Source |
 |---|---|
 | cp1243_test.go, cp1542_test.go | the presets' declared capabilities, from the vendor profiles above |
-| sav5_test.go, procs1815_test.go, seams_test.go, sim/sim_test.go, cmd/dnp3sim/main_test.go, example_test.go | the dnp3 master against this simulator, written from the same standard; not a real device |
+| sav5_test.go, procs1815_test.go, seams_test.go, session_test.go, sim/sim_test.go, cmd/dnp3sim/main_test.go, example_test.go | the dnp3 master against this simulator, written from the same standard; not a real device |
 
 All keys, passwords, certificates and addresses are made-up demo values.

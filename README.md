@@ -97,7 +97,8 @@ go test -race ./...
 The tests at the module root drive the dnp3 master against the
 simulator and the presets: Secure Authentication v5 (session key
 change, aggressive mode, update key change both ways), link-layer
-confirmations and keep-alive, file transfer, the iotsec seams, and the
+confirmations and keep-alive, file transfer, the master's polling session
+(v0.2.0), the iotsec seams, and the
 presets' declared profiles. Tests carry `// Covers: SIG-...` comments:
 requirement IDs of the SigmaM2M project's compliance report, with no
 meaning outside it. The simulator and the dnp3 master are written by the
