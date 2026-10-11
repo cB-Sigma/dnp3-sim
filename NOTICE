@@ -1,0 +1,50 @@
+dnp3-sim (a simulated DNP3 outstation with vendor profile presets, in Go)
+Copyright 2026 Abhinav Gautam
+
+This module is licensed under the Apache License, Version 2.0 (LICENSE).
+
+The code was written for SigmaM2M, a oneM2M platform, from IEEE Std
+1815-2012 and the documents listed in PROVENANCE.md. It contains no code
+from other projects. The source files that come from SigmaM2M carry no
+per-file copyright header (the convention of the code they come from);
+the copyright line above covers them. Files added for this module carry
+"Copyright 2026 Abhinav Gautam" and "SPDX-License-Identifier: Apache-2.0".
+
+Dependencies
+------------
+
+- github.com/cB-Sigma/dnp3 (Apache-2.0, Copyright 2026 Abhinav Gautam):
+  the codec and outstation the simulator is built on.
+- github.com/cB-Sigma/iotsec (Apache-2.0, Copyright 2026 Abhinav
+  Gautam): the security seams.
+- github.com/goburrow/serial v0.1.0 (MIT, Copyright (c) 2015 Quoc-Viet
+  Nguyen), through dnp3.
+- The Go standard library (BSD-3-Clause, Copyright The Go Authors).
+
+Specifications and vendor documents
+-----------------------------------
+
+IEEE Std 1815-2012 is a licensed IEEE standard; it is not redistributed.
+No text of it is reproduced.
+
+The presets cp1243-1 and cp1542sp-1-irc reproduce the declared
+capabilities of two vendor DNP3 device profiles (Siemens CP 1243-1,
+document version 1.1, and Siemens CP 1542SP-1 IRC, document version 2.2,
+laid out after the DNP Users Group device profile template). Only facts
+(item numbers, ticked capabilities, object, qualifier and function code
+rows) are used; the documents are not redistributed and no text of them
+is reproduced.
+
+Trademarks
+----------
+
+Siemens and SIMATIC are trademarks of Siemens AG; they are used here only
+to say whose published profiles the presets follow. DNP3 is a protocol of
+the DNP Users Group. This project is not affiliated with, sponsored or
+endorsed by Siemens, the DNP Users Group or the IEEE.
+
+Test data
+---------
+
+Every key, password, certificate, address and point value in this module
+is a made-up demo value; none belongs to a real installation.
